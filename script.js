@@ -1,259 +1,220 @@
-let deck = {
-  aceH: {
+let deck = [
+  (aceH = {
     name: `Ace of Hearts`,
     value: 1
-  },
-  twoH: {
+  }),
+  (twoH = {
     name: `Two of Hearts`,
     value: 2
-  },
-  threeH: {
+  }),
+  (threeH = {
     name: `Three of Hearts`,
     value: 3
-  },
-  fourH: {
+  }),
+  (fourH = {
     name: `Four of Hearts`,
     value: 4
-  },
-  fiveH: {
+  }),
+  (fiveH = {
     name: `Five of Hearts`,
     value: 5
-  },
-  sixH: {
+  }),
+  (sixH = {
     name: `Six of Hearts`,
     value: 6
-  },
-  sevenH: {
+  }),
+  (sevenH = {
     name: `Seven of Hearts`,
     value: 7
-  },
-  eightH: {
+  }),
+  (eightH = {
     name: `Eight of Hearts`,
     value: 8
-  },
-  nineH: {
+  }),
+  (nineH = {
     name: `Nine of Hearts`,
     value: 9
-  },
-  tenH: {
+  }),
+  (tenH = {
     name: `Ten of Hearts`,
     value: 10
-  },
-  jackH: {
+  }),
+  (jackH = {
     name: `Jack of Hearts`,
     value: 10
-  },
-  queenH: {
+  }),
+  (queenH = {
     name: `Queen of Hearts`,
     value: 10
-  },
-  kingH: {
+  }),
+  (kingH = {
     name: `King of Hearts`,
     value: 10
-  },
-  aceS: {
+  }),
+  (aceS = {
     name: `Ace of Spade`,
     value: 1
-  },
-  twoS: {
+  }),
+  (twoS = {
     name: `Two of Spade`,
     value: 2
-  },
-  threeS: {
+  }),
+  (threeS = {
     name: `Three of Spade`,
     value: 3
-  },
-  fourS: {
+  }),
+  (fourS = {
     name: `Four of Spade`,
     value: 4
-  },
-  fiveS: {
+  }),
+  (fiveS = {
     name: `Five of Spade`,
     value: 5
-  },
-  sixS: {
+  }),
+  (sixS = {
     name: `Six of Spade`,
     value: 6
-  },
-  sevenS: {
+  }),
+  (sevenS = {
     name: `Seven of Spade`,
     value: 7
-  },
-  eightS: {
+  }),
+  (eightS = {
     name: `Eight of Spade`,
     value: 8
-  },
-  nineS: {
+  }),
+  (nineS = {
     name: `Nine of Spade`,
     value: 9
-  },
-  tenS: {
+  }),
+  (tenS = {
     name: `Ten of Spade`,
     value: 10
-  },
-  jackS: {
+  }),
+  (jackS = {
     name: `Jack of Spade`,
     value: 10
-  },
-  queenS: {
+  }),
+  (queenS = {
     name: `Queen of Spade`,
     value: 10
-  },
-  kingS: {
+  }),
+  (kingS = {
     name: `King of Spade`,
     value: 10
-  },
-  aceC: {
+  }),
+  (aceC = {
     name: `Ace of Club`,
     value: 1
-  },
-  twoC: {
+  }),
+  (twoC = {
     name: `Two of Club`,
     value: 2
-  },
-  threeC: {
+  }),
+  (threeC = {
     name: `Three of Club`,
     value: 3
-  },
-  fourC: {
+  }),
+  (fourC = {
     name: `Four of Club`,
     value: 4
-  },
-  fiveC: {
+  }),
+  (fiveC = {
     name: `Five of Club`,
     value: 5
-  },
-  sixC: {
+  }),
+  (sixC = {
     name: `Six of Club`,
     value: 6
-  },
-  sevenC: {
+  }),
+  (sevenC = {
     name: `Seven of Club`,
     value: 7
-  },
-  eightC: {
+  }),
+  (eightC = {
     name: `Eight of Club`,
     value: 8
-  },
-  nineC: {
+  }),
+  (nineC = {
     name: `Nine of Club`,
     value: 9
-  },
-  tenC: {
+  }),
+  (tenC = {
     name: `Ten of Club`,
     value: 10
-  },
-  jackC: {
+  }),
+  (jackC = {
     name: `Jack of Club`,
     value: 10
-  },
-  queenC: {
+  }),
+  (queenC = {
     name: `Queen of Club`,
     value: 10
-  },
-  kingC: {
+  }),
+  (kingC = {
     name: `King of Club`,
     value: 10
-  },
-  aceD: {
+  }),
+  (aceD = {
     name: `Ace of Diamonds`,
     value: 1
-  },
-  twoD: {
+  }),
+  (twoD = {
     name: `Two of Diamonds`,
     value: 2
-  },
-  threeD: {
+  }),
+  (threeD = {
     name: `Three of Diamonds`,
     value: 3
-  },
-  fourD: {
+  }),
+  (fourD = {
     name: `Four of Diamonds`,
     value: 4
-  },
-  fiveD: {
+  }),
+  (fiveD = {
     name: `Five of Diamonds`,
     value: 5
-  },
-  sixD: {
+  }),
+  (sixD = {
     name: `Six of Diamonds`,
     value: 6
-  },
-  sevenD: {
+  }),
+  (sevenD = {
     name: `Seven of Diamonds`,
     value: 7
-  },
-  eightD: {
+  }),
+  (eightD = {
     name: `Eight of Diamonds`,
     value: 8
-  },
-  nineD: {
+  }),
+  (nineD = {
     name: `Nine of Diamonds`,
     value: 9
-  },
-  tenD: {
+  }),
+  (tenD = {
     name: `Ten of Diamonds`,
     value: 10
-  },
-  jackD: {
+  }),
+  (jackD = {
     name: `Jack of Diamonds`,
     value: 10
-  },
-  queenD: {
+  }),
+  (queenD = {
     name: `Queen of Diamonds`,
     value: 10
-  },
-  kingD: {
+  }),
+  (kingD = {
     name: `King of Diamonds`,
     value: 10
-  }
-}
+  })
+]
 let btnPlayer = document.getElementById(`player`)
 let btnReset = document.getElementById(`reset`)
 //////////////////////////////////////////////////
 
+deck.sort((a, b) => 0.5 - Math.random())
 console.log(deck)
 
-// let gamePlay = () => {
-//   testP.drawCard()
-//   testP.drawCard()
-
-//   testD.drawCard()
-//   testD.drawCard()
-//   // compareChoice()
-// }
-// btnPlayer.addEventListener(`click`, () => {
-//   testP.drawCard()
-//   console.log(testP)
-// })
-// gamePlay()
-
-// btnReset.addEventListener(`click`, () => {
-//   location.reload()
-// })
-// let z = []
-// for (let i = 0; i < testP.hand.length; i++) {
-//   console.log(testP.hand)
-//   const replaced = testP.hand[i].replace(/\D/g, '')
-//   console.log(replaced)
-
-//   let num
-
-//   if (replaced !== '') {
-//     num = Number(replaced)
-//     z.push(num)
-//   }
-//   console.log(z)
-//   // let results = z.reduce((x, y) => {
-//   //   return x + y
-//   // }, 0)
-
-//   // console.log(results)
-//   // if (results < 21) {
-//   //   console.log(`hit or stand`)
-//   // } else if (results === 21) {
-//   //   console.log(`BlackJack`)
-//   // } else {
-//   //   console.log(`try again`)
-//   // }
-// }
+for (i = 0; i < deck.length; i++) {
+  console.log(deck[i].value)
+}
