@@ -16,6 +16,8 @@ my approach to the game will be through event listeners for button clicks, math.
 
 # Credits
 
-Trello for organization [https://trello.com/b/ezm2FyEO/unit-1-projectblackjack]
+[Trello for organization](https://trello.com/b/ezm2FyEO/unit-1-projectblackjack)
 
-cover photo[https://www.shutterstock.com/image-illustration/casino-cards-poker-blackjack-baccarat-260nw-2049483164.jpg]
+[cover photo](https://www.shutterstock.com/image-illustration/casino-cards-poker-blackjack-baccarat-260nw-2049483164.jpg)
+
+[player card back](https://www.nicepng.com/ourpic/u2y3a9q8q8r5w7i1_nouveau-bourgogne-playing-cards-back-game-card-back/)
