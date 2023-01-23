@@ -1,7 +1,8 @@
 let suits = [`H`, `C`, `S`, `D`]
 let cards = [`2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `J`, `Q`, `K`, `A`]
 let deck = []
-
+let btnPlayer = document.getElementById(`player`)
+let btnReset = document.getElementById(`reset`)
 //////////////////////////////////////////////////
 suits.forEach((x) => {
   cards.forEach((y) => {
@@ -33,8 +34,24 @@ class dealerHand {
     return deck
   }
 }
-// test = new playerHand()
-// test.drawCard()
-// test.drawCard()
-// console.log(test)
-// console.log(deck)
+testP = new playerHand()
+testD = new dealerHand()
+let gamePlay = () => {
+  testP.drawCard()
+  testP.drawCard()
+
+  testD.drawCard()
+  testD.drawCard()
+}
+btnPlayer.addEventListener(`click`, () => {
+  testP.drawCard()
+  console.log(testP)
+})
+gamePlay()
+
+console.log(testD)
+console.log(testP)
+
+btnReset.addEventListener(`click`, () => {
+  location.reload()
+})
