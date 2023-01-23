@@ -213,8 +213,22 @@ let btnReset = document.getElementById(`reset`)
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
-console.log(deck)
-
-for (i = 0; i < deck.length; i++) {
-  console.log(deck[i].value)
+// console.log(deck)
+cardsPlayed = []
+drawCard = () => {
+  let x = deck[0]
+  deck.shift()
+  cardsPlayed.push(x)
+  return deck
 }
+
+compareChoice = () => {}
+
+gamePlay = () => {
+  drawCard()
+  drawCard()
+  console.log(cardsPlayed)
+
+  console.log(deck)
+}
+gamePlay()
