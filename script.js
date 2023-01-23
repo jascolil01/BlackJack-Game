@@ -9,8 +9,19 @@ suits.forEach((x) => {
     deck.push(y + x)
   })
 })
-
 deck.sort((a, b) => 0.5 - Math.random())
+
+let compareChoice = () => {
+  // if (value < 21) {
+  //   btnPlayer.addEventListener(`click`, () => {
+  //     testP.drawCard()
+  //     console.log(testP)
+  //   })
+  // } else if (value === 21) {
+  //   alert(`Black Jack!!!`)
+  // } else {
+  // }
+}
 
 class playerHand {
   constructor() {
@@ -21,6 +32,9 @@ class playerHand {
     deck.shift()
     this.hand.push(x)
     return deck
+  }
+  currentHand() {
+    return this.hand
   }
 }
 class dealerHand {
@@ -42,6 +56,7 @@ let gamePlay = () => {
 
   testD.drawCard()
   testD.drawCard()
+  compareChoice()
 }
 btnPlayer.addEventListener(`click`, () => {
   testP.drawCard()
@@ -50,8 +65,20 @@ btnPlayer.addEventListener(`click`, () => {
 gamePlay()
 
 console.log(testD)
-console.log(testP)
+console.log(testP.hand)
 
 btnReset.addEventListener(`click`, () => {
   location.reload()
 })
+
+for (let i = 0; i < testP.hand.length; i++) {
+  const replaced = testP.hand[i].replace(/\D/g, '') // 👉️ '123'
+  console.log(replaced)
+
+  let num
+
+  if (replaced !== '') {
+    num = Number(replaced) // 👉️ 123
+  }
+  console.log(num)
+}
