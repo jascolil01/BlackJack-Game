@@ -8,15 +8,33 @@ suits.forEach((x) => {
     deck.push(y + x)
   })
 })
-// let shuffleDeck = (deck) => {
-//   for (let x = deck.length - 1; x > 0; i--) {
-//     let z = Math.floor(Math.random() * (x + 1))
-//     let temp = deck[x]
-//     deck[x] = deck[z]
-//     deck[z] = temp
-//   }
-//   return deck
-// }
+
 deck.sort((a, b) => 0.5 - Math.random())
 
-console.log(deck)
+class playerHand {
+  constructor() {
+    this.hand = []
+  }
+  drawCard() {
+    let x = deck[0]
+    deck.shift()
+    this.hand.push(x)
+    return deck
+  }
+}
+class dealerHand {
+  constructor() {
+    this.hand = []
+  }
+  drawCard() {
+    let x = deck[0]
+    deck.shift()
+    this.hand.push(x)
+    return deck
+  }
+}
+// test = new playerHand()
+// test.drawCard()
+// test.drawCard()
+// console.log(test)
+// console.log(deck)
