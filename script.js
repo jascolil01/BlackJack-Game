@@ -220,6 +220,8 @@ let loser = document.getElementById(`loser`)
 let playerB = document.getElementById(`playerB`)
 let dealerB = document.getElementById(`dealerB`)
 let tie = document.getElementById(`tie`)
+let playerCards = document.getElementById(`playerCards`)
+let dealerCards = document.getElementById(`dealerCards`)
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
@@ -228,8 +230,12 @@ let cardsPlayedP = []
 let cardsPlayedD = []
 
 drawCard = () => {
-  let x = deck[0]
-  cardsPlayedP.push(x)
+  let z = deck[0]
+  let newDivZ = document.createElement(`div`)
+  let newCardZ = document.createTextNode(deck[0].name)
+  newDivZ.appendChild(newCardZ)
+  playerCards.appendChild(newDivZ)
+  cardsPlayedP.push(z)
   deck.shift()
   return deck
 }
@@ -282,8 +288,12 @@ compareChoiceD = () => {
     dealerB.style.opacity = 1
   } else if (finalSumD < 17) {
     let y = deck[0]
-    deck.shift()
+    let newDivY = document.createElement(`div`)
+    let newCardY = document.createTextNode(deck[0].name)
+    newDivY.appendChild(newCardY)
+    dealerCards.appendChild(newDivY)
     cardsPlayedD.push(y)
+    deck.shift()
     compareChoiceD()
     console.log(cardsPlayedD)
   } else if (18 < finalSumD < 21) {
@@ -293,17 +303,37 @@ compareChoiceD = () => {
 
 gamePlay = () => {
   let x = deck[0]
+  let newDiv = document.createElement(`div`)
+  let newCard = document.createTextNode(deck[0].name)
+  newDiv.appendChild(newCard)
+  playerCards.appendChild(newDiv)
   cardsPlayedP.push(x)
   deck.shift()
+
   let y = deck[0]
+  let newDivY = document.createElement(`div`)
+  let newCardY = document.createTextNode(deck[0].name)
+  newDivY.appendChild(newCardY)
+  dealerCards.appendChild(newDivY)
   cardsPlayedD.push(y)
   deck.shift()
+
   let z = deck[0]
+  let newDivZ = document.createElement(`div`)
+  let newCardZ = document.createTextNode(deck[0].name)
+  newDivZ.appendChild(newCardZ)
+  playerCards.appendChild(newDivZ)
   cardsPlayedP.push(z)
   deck.shift()
+
   let a = deck[0]
+  let newDivA = document.createElement(`div`)
+  let newCardA = document.createTextNode(deck[0].name)
+  newDivA.appendChild(newCardA)
+  dealerCards.appendChild(newDivA)
   cardsPlayedD.push(a)
   deck.shift()
+
   compareChoiceP()
 }
 
