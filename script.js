@@ -1,7 +1,7 @@
 let deck = [
   (aceH = {
     name: `Ace of Hearts`,
-    value: 1
+    value: 11
   }),
   (twoH = {
     name: `Two of Hearts`,
@@ -53,7 +53,7 @@ let deck = [
   }),
   (aceS = {
     name: `Ace of Spade`,
-    value: 1
+    value: 11
   }),
   (twoS = {
     name: `Two of Spade`,
@@ -105,7 +105,7 @@ let deck = [
   }),
   (aceC = {
     name: `Ace of Club`,
-    value: 1
+    value: 11
   }),
   (twoC = {
     name: `Two of Club`,
@@ -157,7 +157,7 @@ let deck = [
   }),
   (aceD = {
     name: `Ace of Diamonds`,
-    value: 1
+    value: 11
   }),
   (twoD = {
     name: `Two of Diamonds`,
@@ -208,6 +208,25 @@ let deck = [
     value: 10
   })
 ]
+
+// let deck = [
+//   (aceH = {
+//     name: `Ace of Hearts`,
+//     value: 11
+//   }),
+//   (aceC = {
+//     name: `Ace of Clubs`,
+//     value: 11
+//   }),
+//   (aceS = {
+//     name: `Ace of Spades`,
+//     value: 11
+//   }),
+//   (aceD = {
+//     name: `Ace of Diamonds`,
+//     value: 11
+//   })
+// ]
 let btnPlayer = document.getElementById(`player`)
 
 let btnReset = document
@@ -232,8 +251,8 @@ drawCard = () => {
 
 btnPlayer.addEventListener(`click`, () => {
   drawCard()
-  compareChoice()
   console.log(cardsPlayedP)
+  compareChoiceP()
 })
 
 compareChoiceP = () => {
@@ -246,25 +265,41 @@ compareChoiceP = () => {
   let finalSum = newValue.reduce((x, y) => {
     return x + y
   }, 0)
-  console.log(finalSum)
+
+  if (finalSum > 21) {
+    if (aceH) {
+      finalSum = finalSum - 10
+    } else if (aceC) {
+      finalSum = finalSum - 10
+    } else if (aceS) {
+      finalSum = finalSum - 10
+    } else if (aceD) {
+      finalSum = finalSum - 10
+    } else {
+      console.log(`you bust`)
+    }
+  } else if (finalSum === 21) {
+    console.log(`blackjack`)
+  } else {
+    console.log(`try again`)
+  }
 }
 
 gamePlay = () => {
   let x = deck[0]
   deck.shift()
   cardsPlayedP.push(x)
-  let y = deck[0]
-  deck.shift()
-  cardsPlayedD.push(y)
+  // let y = deck[0]
+  // deck.shift()
+  // cardsPlayedD.push(y)
   let z = deck[0]
   deck.shift()
   cardsPlayedP.push(z)
-  let a = deck[0]
-  deck.shift()
-  cardsPlayedD.push(a)
+  // let a = deck[0]
+  // deck.shift()
+  // cardsPlayedD.push(a)
 
-  console.log(cardsPlayedD)
   console.log(cardsPlayedP)
-  console.log(deck)
+  compareChoiceP()
 }
 gamePlay()
