@@ -209,7 +209,7 @@ let deck = [
   })
 ]
 let btnPlayer = document.getElementById(`player`)
-
+let btnDealer = document.getElementById(`dealer`)
 let btnReset = document
   .getElementById(`reset`)
   .addEventListener(`click`, () => {
@@ -225,8 +225,8 @@ cardsPlayedD = []
 
 drawCard = () => {
   let x = deck[0]
-  deck.shift()
   cardsPlayedP.push(x)
+  deck.shift()
   return deck
 }
 
@@ -235,7 +235,35 @@ btnPlayer.addEventListener(`click`, () => {
   console.log(cardsPlayedP)
   compareChoiceP()
 })
+btnDealer.addEventListener(`click`, () => {
+  btnPlayer.disabled = true
+  compareChoiceD = () => {
+    let newValue = []
+    cardsPlayedD.forEach((value) => {
+      newValue.push(value.value)
+      return newValue
+    })
+    let finalSumD = newValue.reduce((x, y) => {
+      return x + y
+    }, 0)
 
+    if (finalSumD > 21) {
+      console.log(`Dealer bust`)
+    } else if (finalSumD === 21) {
+      console.log(`Dealer wins,blackjack`)
+    } else if (finalSumD < 17) {
+      let y = deck[0]
+      deck.shift()
+      cardsPlayedD.push(y)
+      compareChoiceD()
+      console.log(cardsPlayedD)
+      // console.log(`Dealer stands, dealer has ${finalSum}`)
+    } else if (18 < finalSumD < 21) {
+      console.log(`Dealer stands, dealer has ${finalSumD}`)
+    }
+  }
+  compareChoiceD()
+})
 compareChoiceP = () => {
   let newValue = []
   cardsPlayedP.forEach((value) => {
@@ -243,57 +271,46 @@ compareChoiceP = () => {
     return newValue
   })
 
-  let finalSum = newValue.reduce((x, y) => {
+  let finalSumP = newValue.reduce((x, y) => {
     return x + y
   }, 0)
 
-  if (finalSum > 21) {
+  if (finalSumP > 21) {
     console.log(`you bust`)
-  } else if (finalSum === 21) {
+    btnDealer.disabled = true
+    btnPlayer.disabled = true
+  } else if (finalSumP === 21) {
     console.log(`blackjack`)
   } else {
-    console.log(`try again`)
+    console.log(`Hit or Pass`)
   }
 }
-compareChoiceD = () => {
-  let newValue = []
-  cardsPlayedD.forEach((value) => {
-    newValue.push(value.value)
-    return newValue
-  })
 
-  let finalSum = newValue.reduce((x, y) => {
-    return x + y
-  }, 0)
-
-  if (finalSum > 21) {
-    console.log(`Dealer bust`)
-  } else if (finalSum === 21) {
-    console.log(`Dealer wins,blackjack`)
-  } else if (finalSum < 17) {
-    let y = deck[0]
-    deck.shift()
-    cardsPlayedD.push(y)
-    compareChoiceD()
-    console.log(cardsPlayedD)
-    console.log(`Dealer stands, dealer has ${finalSum}`)
-  }
-}
+// compareChoiceF = () => {
+//   console.log(finalSumD)
+//   if (finalSumD < finalSumP && finalSumP < 21) {
+//     console.log(`Player wins`)
+//   } else if (finalSumD > finalSumP && finalSumD < 21) {
+//     console.log(`Dealer wins`)
+//   } else if (finalSumP > 21) {
+//     console.log(`You lose, you went over 21`)
+//   }
+// }
 gamePlay = () => {
   let x = deck[0]
-  deck.shift()
   cardsPlayedP.push(x)
+  deck.shift()
   let y = deck[0]
-  deck.shift()
   cardsPlayedD.push(y)
+  deck.shift()
   let z = deck[0]
-  deck.shift()
   cardsPlayedP.push(z)
-  let a = deck[0]
   deck.shift()
+  let a = deck[0]
   cardsPlayedD.push(a)
+  deck.shift()
   compareChoiceP()
-  compareChoiceD()
 }
 gamePlay()
+console.log(cardsPlayedP)
 console.log(cardsPlayedD)
