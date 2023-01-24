@@ -21,3 +21,7 @@ my approach to the game will be through event listeners for button clicks, math.
 [cover photo](https://www.shutterstock.com/image-illustration/casino-cards-poker-blackjack-baccarat-260nw-2049483164.jpg)
 
 [player card back](https://www.nicepng.com/ourpic/u2y3a9q8q8r5w7i1_nouveau-bourgogne-playing-cards-back-game-card-back/)
+
+[Player card Faces](https://www.dcode.fr/playing-cards#:~:text=A%20deck%20of%20cards%20is,)%2C%20King%20(K).&text=Cards%20that%20do%20not%20have,face%20cards%20or%20court%20cards.)
+
+[Casino rug background](https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg)

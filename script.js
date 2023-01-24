@@ -274,6 +274,7 @@ let dealerB = document.getElementById(`dealerB`)
 let tie = document.getElementById(`tie`)
 let playerCards = document.getElementById(`playerCards`)
 let dealerCards = document.getElementById(`dealerCards`)
+
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
@@ -283,7 +284,7 @@ let cardsPlayedD = []
 
 drawCard = () => {
   let z = deck[0]
-  addPic()
+  addPicP()
   cardsPlayedP.push(z)
   deck.shift()
   return deck
@@ -339,7 +340,7 @@ compareChoiceD = () => {
     dealerB.style.opacity = 1
   } else if (finalSumD < 17) {
     let y = deck[0]
-    addPic()
+    addPicD()
     cardsPlayedD.push(y)
     deck.shift()
     compareChoiceD()
@@ -348,29 +349,34 @@ compareChoiceD = () => {
     return finalSumD
   }
 }
-addPic = () => {
+addPicP = () => {
   var img = new Image()
   img.src = deck[0].img
   playerCards.appendChild(img)
 }
+addPicD = () => {
+  var img = new Image()
+  img.src = deck[0].img
+  dealerCards.appendChild(img)
+}
 gamePlay = () => {
   let x = deck[0]
-  addPic()
+  addPicP()
   cardsPlayedP.push(x)
   deck.shift()
 
   let y = deck[0]
-  addPic()
+  addPicD()
   cardsPlayedD.push(y)
   deck.shift()
 
   let z = deck[0]
-  addPic()
+  addPicP()
   cardsPlayedP.push(z)
   deck.shift()
 
   let a = deck[0]
-  addPic()
+  addPicD()
   cardsPlayedD.push(a)
   deck.shift()
 

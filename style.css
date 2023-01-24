@@ -1,11 +1,19 @@
 body{
-  background-color: blueviolet;
+  background-image: url("https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg") ;
 }
 button{
   color:red;
   display: flex;
   justify-content: center;
   align-content: center;
+}
+#navButton{
+  color: black;
+  transition: .3s;
+}
+#navButton:hover{
+font-size: 3em;
+background-color: red;
 }
 #winner,#loser,#dealerB,#playerB,#tie {
   position: absolute;
@@ -22,13 +30,16 @@ button{
 }
 #playerCards{
   display:flex;
-  justify-content: center, space-around;
+  justify-content: center;
   align-items: flex-end; 
 }
+#dealerCards{
+  display:flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
 #table{
-  display: flex;
-  align-content: center;
-   background-color: green;
+  background-color: green;
   height: 500px;
   width: 80%;
   border-radius: 50%;
