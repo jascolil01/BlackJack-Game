@@ -209,26 +209,62 @@ let deck = [
   })
 ]
 let btnPlayer = document.getElementById(`player`)
-let btnReset = document.getElementById(`reset`)
+
+let btnReset = document
+  .getElementById(`reset`)
+  .addEventListener(`click`, () => {
+    location.reload()
+  })
+
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
-// console.log(deck)
-cardsPlayed = []
+
+cardsPlayedP = []
+cardsPlayedD = []
+
 drawCard = () => {
   let x = deck[0]
   deck.shift()
-  cardsPlayed.push(x)
+  cardsPlayedP.push(x)
   return deck
 }
 
-compareChoice = () => {}
+btnPlayer.addEventListener(`click`, () => {
+  drawCard()
+  compareChoice()
+  console.log(cardsPlayedP)
+})
+
+compareChoiceP = () => {
+  let newValue = []
+  cardsPlayedP.forEach((value) => {
+    newValue.push(value.value)
+    return newValue
+  })
+
+  let finalSum = newValue.reduce((x, y) => {
+    return x + y
+  }, 0)
+  console.log(finalSum)
+}
 
 gamePlay = () => {
-  drawCard()
-  drawCard()
-  console.log(cardsPlayed)
+  let x = deck[0]
+  deck.shift()
+  cardsPlayedP.push(x)
+  let y = deck[0]
+  deck.shift()
+  cardsPlayedD.push(y)
+  let z = deck[0]
+  deck.shift()
+  cardsPlayedP.push(z)
+  let a = deck[0]
+  deck.shift()
+  cardsPlayedD.push(a)
 
+  console.log(cardsPlayedD)
+  console.log(cardsPlayedP)
   console.log(deck)
 }
 gamePlay()
