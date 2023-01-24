@@ -215,13 +215,17 @@ let btnReset = document
   .addEventListener(`click`, () => {
     location.reload()
   })
-
+let winner = document.getElementById(`winner`)
+let loser = document.getElementById(`loser`)
+let playerB = document.getElementById(`playerB`)
+let dealerB = document.getElementById(`dealerB`)
+let tie = document.getElementById(`tie`)
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
 
-cardsPlayedP = []
-cardsPlayedD = []
+let cardsPlayedP = []
+let cardsPlayedD = []
 
 drawCard = () => {
   let x = deck[0]
@@ -232,38 +236,16 @@ drawCard = () => {
 
 btnPlayer.addEventListener(`click`, () => {
   drawCard()
-  console.log(cardsPlayedP)
+
   compareChoiceP()
 })
 btnDealer.addEventListener(`click`, () => {
   btnPlayer.disabled = true
-  compareChoiceD = () => {
-    let newValue = []
-    cardsPlayedD.forEach((value) => {
-      newValue.push(value.value)
-      return newValue
-    })
-    let finalSumD = newValue.reduce((x, y) => {
-      return x + y
-    }, 0)
-
-    if (finalSumD > 21) {
-      console.log(`Dealer bust`)
-    } else if (finalSumD === 21) {
-      console.log(`Dealer wins,blackjack`)
-    } else if (finalSumD < 17) {
-      let y = deck[0]
-      deck.shift()
-      cardsPlayedD.push(y)
-      compareChoiceD()
-      console.log(cardsPlayedD)
-      // console.log(`Dealer stands, dealer has ${finalSum}`)
-    } else if (18 < finalSumD < 21) {
-      console.log(`Dealer stands, dealer has ${finalSumD}`)
-    }
-  }
+  btnDealer.disabled = true
   compareChoiceD()
+  compareChoiceF()
 })
+
 compareChoiceP = () => {
   let newValue = []
   cardsPlayedP.forEach((value) => {
@@ -276,26 +258,39 @@ compareChoiceP = () => {
   }, 0)
 
   if (finalSumP > 21) {
-    console.log(`you bust`)
     btnDealer.disabled = true
     btnPlayer.disabled = true
+    loser.style.opacity = 1
   } else if (finalSumP === 21) {
-    console.log(`blackjack`)
-  } else {
-    console.log(`Hit or Pass`)
+    playerB.style.opacity = 1
+  }
+  return finalSumP
+}
+compareChoiceD = () => {
+  let newValue = []
+  cardsPlayedD.forEach((value) => {
+    newValue.push(value.value)
+    return newValue
+  })
+  let finalSumD = newValue.reduce((x, y) => {
+    return x + y
+  }, 0)
+
+  if (finalSumD > 21) {
+    winner.style.opacity = 1
+  } else if (finalSumD === 21) {
+    dealerB.style.opacity = 1
+  } else if (finalSumD < 17) {
+    let y = deck[0]
+    deck.shift()
+    cardsPlayedD.push(y)
+    compareChoiceD()
+    console.log(cardsPlayedD)
+  } else if (18 < finalSumD < 21) {
+    return finalSumD
   }
 }
 
-// compareChoiceF = () => {
-//   console.log(finalSumD)
-//   if (finalSumD < finalSumP && finalSumP < 21) {
-//     console.log(`Player wins`)
-//   } else if (finalSumD > finalSumP && finalSumD < 21) {
-//     console.log(`Dealer wins`)
-//   } else if (finalSumP > 21) {
-//     console.log(`You lose, you went over 21`)
-//   }
-// }
 gamePlay = () => {
   let x = deck[0]
   cardsPlayedP.push(x)
@@ -311,6 +306,16 @@ gamePlay = () => {
   deck.shift()
   compareChoiceP()
 }
+
+compareChoiceF = () => {
+  console.log(compareChoiceD())
+  console.log(compareChoiceP())
+  if (compareChoiceD() < compareChoiceP() && compareChoiceP() < 21) {
+    winner.style.opacity = 1
+  } else if (compareChoiceD() > compareChoiceP() && compareChoiceD() < 21) {
+    loser.style.opacity = 1
+  } else if (compareChoiceD() === compareChoiceP()) {
+    tie.style.opacity = 1
+  }
+}
 gamePlay()
-console.log(cardsPlayedP)
-console.log(cardsPlayedD)

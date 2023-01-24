@@ -8,10 +8,29 @@
   <title>BlackJack</title>
 </head>
 <body>
+  <section id="winner">
+    <h1 class="title --xl-large">Winner!</h1>
+  </section>
+  <section id="loser">
+    <h1 class="title --xl-large">You lost!</h1>
+  </section>
+  <section id="dealerB">
+    <h1 class="title --xl-large">Dealer got BlackJack!</h1>
+  </section>
+  <section id="playerB">
+    <h1 class="title --xl-large">Player got BlackJack!</h1>
+  </section>
+  <section id="tie">
+    <h1 class="title --xl-large">Its a push!</h1>
+  </section>
   <div>
+    <div id="table">
+      <div id="playerCards"></div>
+      <div id="dealerCards"></div>
+    </div>
     <button id="player">Hit</button>
 <button id="dealer">Pass</button>
-    <button id="reset">reset</button>
+<button id="reset">Play again?</button>
   </div>
 </body>
 <script src="script.js" charset="utf-8"></script>
