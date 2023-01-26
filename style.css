@@ -7,12 +7,16 @@ button{
  justify-content: center;
   color:green;
   font-size: 2rem;
+  border-radius: 10px;
+  border: none;
   transition: .4s;
 }
 button:hover{
   background-color: blue;
   color: aqua;
+
 }
+a{text-decoration: none;}
 #navButton{
   display:block;
   color: black;
@@ -21,10 +25,10 @@ button:hover{
 #navButton:hover{
 font-size: 4em;
 background-color: red;
+
 }
 #winner,#loser,#dealerB,#playerB,#tie {
   position:absolute;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

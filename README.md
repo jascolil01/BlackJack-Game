@@ -6,6 +6,8 @@
 
 this is the repository for my project, I decided to make a black jack game, there is a trello for my thought process I will be using VSCode to do all the programming
 
+[Here is the game](https://black-jackgame.surge.sh/)
+
 # About the Game
 
 This game will be about Black Jack!! it will have the features of playing against a computer to see who can get closest to 21! if you go over 21 it is a bust! if you get dealt 21 you win!

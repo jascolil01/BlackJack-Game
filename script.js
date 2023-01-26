@@ -459,11 +459,6 @@ gamePlay = () => {
   cardsPlayedP.push(z)
   deck.shift()
 
-  let a = deck[0]
-  addPicD()
-  cardsPlayedD.push(a)
-  deck.shift()
-
   compareChoiceP()
 }
 

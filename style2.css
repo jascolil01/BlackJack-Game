@@ -1,16 +1,16 @@
 body{
-  background-image: url("https://www.mandatory.com/assets/uploads/gallery/hilarious-zoom-backgrounds/this-is-fine.gif");
-
+  background-image: url("https://media.istockphoto.com/id/1234887973/photo/empty-wooden-planks-with-blur-beach-and-sea-on-background.jpg?b=1&s=612x612&w=0&k=20&c=Api_rWrfUDODnyxDgW4tNqtRWbOk6lBZhmsYDVEtArw=");
+font-size: 30px;
 background-repeat: no-repeat;
 background-size: cover;
 text-align: center;
 }
 h1,p{
-  color: blue;
+  color: rgb(255, 0, 0);
   transition: .5s;
 }
 p:hover,h1:hover{
-  color: rgb(6, 245, 6);
+  color: blue;
 }
 
 a{
@@ -20,4 +20,10 @@ a{
 }
 a:hover{
   font-size: 60px;
+}
+img{
+  transition: 0.5s;
+}
+img:hover{
+  opacity: 0;
 }
