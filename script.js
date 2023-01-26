@@ -1,7 +1,7 @@
 let deck = [
   (aceH = {
     name: `Ace of Hearts`,
-    value: 1,
+    value: 11,
     img: 'https://www.dcode.fr/tools/playing-cards/images/coeur_a.png'
   }),
   (twoH = {
@@ -65,8 +65,8 @@ let deck = [
     img: 'https://www.dcode.fr/tools/playing-cards/images/coeur_r.png'
   }),
   (aceS = {
-    name: `Ace of Spade`,
-    value: 1,
+    name: `Ace of Spades`,
+    value: 11,
     img: 'https://www.dcode.fr/tools/playing-cards/images/pique_a.png'
   }),
   (twoS = {
@@ -130,8 +130,8 @@ let deck = [
     img: 'https://www.dcode.fr/tools/playing-cards/images/pique_r.png'
   }),
   (aceC = {
-    name: `Ace of Club`,
-    value: 1,
+    name: `Ace of Clubs`,
+    value: 11,
     img: 'https://www.dcode.fr/tools/playing-cards/images/trefle_a.png'
   }),
   (twoC = {
@@ -196,7 +196,7 @@ let deck = [
   }),
   (aceD = {
     name: `Ace of Diamonds`,
-    value: 1,
+    value: 11,
     img: 'https://www.dcode.fr/tools/playing-cards/images/carreau_a.png'
   }),
   (twoD = {
@@ -274,13 +274,13 @@ let dealerB = document.getElementById(`dealerB`)
 let tie = document.getElementById(`tie`)
 let playerCards = document.getElementById(`playerCards`)
 let dealerCards = document.getElementById(`dealerCards`)
-
+let cardsPlayedP = []
+let cardsPlayedD = []
+let aceInHandP = 0
+let aceInHandD = 0
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
-
-let cardsPlayedP = []
-let cardsPlayedD = []
 
 drawCard = () => {
   let z = deck[0]
@@ -306,6 +306,11 @@ compareChoiceP = () => {
   let newValue = []
   cardsPlayedP.forEach((value) => {
     newValue.push(value.value)
+    for (let i = 0; i < newValue.length; i++) {
+      if (newValue[i] === 11) {
+        aceInHandP = +1
+      }
+    }
     return newValue
   })
 
@@ -313,27 +318,53 @@ compareChoiceP = () => {
     return x + y
   }, 0)
 
-  if (finalSumP > 21) {
-    btnDealer.disabled = true
+  if (aceInHandP > 0) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+      if (finalSumP > 21) {
+        btnPlayer.disabled = true
+        btnDealer.disabled = true
+        loser.style.opacity = 1
+      } else if (finalSumP === 21) {
+        btnPlayer.disabled = true
+        btnDealer.disabled = true
+        playerB.style.opacity = 1
+      }
+    }
+  } else if (finalSumP > 21) {
     btnPlayer.disabled = true
+    btnDealer.disabled = true
     loser.style.opacity = 1
   } else if (finalSumP === 21) {
     btnPlayer.disabled = true
     btnDealer.disabled = true
     playerB.style.opacity = 1
   }
+
   return finalSumP
 }
 compareChoiceD = () => {
   let newValue = []
   cardsPlayedD.forEach((value) => {
     newValue.push(value.value)
+    for (let i = 0; i < newValue.length; i++) {
+      if (newValue[i] === 11) {
+        aceInHandD = +1
+      }
+    }
     return newValue
   })
   let finalSumD = newValue.reduce((x, y) => {
     return x + y
   }, 0)
-
+  if (aceInHandD > 0) {
+    if (finalSumD > 21) {
+      finalSumD = finalSumD - 10
+      if (finalSumD > 21) {
+        winner.style.opacity = 1
+      }
+    }
+  }
   if (finalSumD > 21) {
     winner.style.opacity = 1
   } else if (finalSumD === 21) {
@@ -344,7 +375,6 @@ compareChoiceD = () => {
     cardsPlayedD.push(y)
     deck.shift()
     compareChoiceD()
-    console.log(cardsPlayedD)
   } else if (18 < finalSumD < 21) {
     return finalSumD
   }
@@ -384,8 +414,6 @@ gamePlay = () => {
 }
 
 compareChoiceF = () => {
-  console.log(compareChoiceD())
-  console.log(compareChoiceP())
   if (compareChoiceD() < compareChoiceP() && compareChoiceP() < 21) {
     winner.style.opacity = 1
   } else if (compareChoiceD() > compareChoiceP() && compareChoiceD() < 21) {

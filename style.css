@@ -39,6 +39,8 @@ background-color: red;
   align-items: flex-start; 
 }
 #table{
+  display: flex;
+  justify-content: center;
   background-color: green;
   height: 500px;
   width: 80%;
