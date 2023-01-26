@@ -302,7 +302,6 @@ drawCard = () => {
 
 btnPlayer.addEventListener(`click`, () => {
   drawCard()
-
   compareChoiceP()
 })
 btnDealer.addEventListener(`click`, () => {
@@ -400,24 +399,24 @@ compareChoiceD = () => {
   let finalSumD = newValue.reduce((x, y) => {
     return x + y
   }, 0)
-  if (aceCInHandP === 1) {
-    if (finalSumP > 21) {
-      finalSumP = finalSumP - 10
+  if (aceCInHandD === 1) {
+    if (finalSumD > 21) {
+      finalSumD = finalSumD - 10
     }
   }
-  if (aceHInHandP === 1) {
-    if (finalSumP > 21) {
-      finalSumP = finalSumP - 10
+  if (aceHInHandD === 1) {
+    if (finalSumD > 21) {
+      finalSumD = finalSumD - 10
     }
   }
-  if (aceDInHandP === 1) {
-    if (finalSumP > 21) {
-      finalSumP = finalSumP - 10
+  if (aceDInHandD === 1) {
+    if (finalSumD > 21) {
+      finalSumD = finalSumD - 10
     }
   }
-  if (aceSInHandP === 1) {
-    if (finalSumP > 21) {
-      finalSumP = finalSumP - 10
+  if (aceSInHandD === 1) {
+    if (finalSumD > 21) {
+      finalSumD = finalSumD - 10
     }
   }
   if (finalSumD > 21) {

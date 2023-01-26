@@ -1,0 +1,23 @@
+body{
+  background-image: url("https://www.mandatory.com/assets/uploads/gallery/hilarious-zoom-backgrounds/this-is-fine.gif");
+
+background-repeat: no-repeat;
+background-size: cover;
+text-align: center;
+}
+h1,p{
+  color: blue;
+  transition: .5s;
+}
+p:hover,h1:hover{
+  color: rgb(6, 245, 6);
+}
+
+a{
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  transition: .3s;
+}
+a:hover{
+  font-size: 60px;
+}
