@@ -26,4 +26,4 @@ my approach to the game will be through event listeners for button clicks, math.
 
 [Casino rug background](https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg)
 
-[Second Page Gif]("https://www.mandatory.com/assets/uploads/gallery/hilarious-zoom-backgrounds/this-is-fine.gif")
+[Second Page Gif](https://www.mandatory.com/assets/uploads/gallery/hilarious-zoom-backgrounds/this-is-fine.gif)
