@@ -276,7 +276,17 @@ let playerCards = document.getElementById(`playerCards`)
 let dealerCards = document.getElementById(`dealerCards`)
 let cardsPlayedP = []
 let cardsPlayedD = []
-let aceInHandP = 0
+
+let aceCInHandP = 0
+let aceDInHandP = 0
+let aceSInHandP = 0
+let aceHInHandP = 0
+
+let aceCInHandD = 0
+let aceDInHandD = 0
+let aceSInHandD = 0
+let aceHInHandD = 0
+
 let aceInHandD = 0
 //////////////////////////////////////////////////
 
@@ -303,14 +313,24 @@ btnDealer.addEventListener(`click`, () => {
 })
 
 compareChoiceP = () => {
+  for (let i = 0; i < cardsPlayedP.length; i++) {
+    if (cardsPlayedP[i].name === `Ace of Clubs`) {
+      aceCInHandP = 1
+    }
+    if (cardsPlayedP[i].name === `Ace of Spades`) {
+      aceSInHandP = 1
+    }
+    if (cardsPlayedP[i].name === `Ace of Diamonds`) {
+      aceDInHandP = 1
+    }
+    if (cardsPlayedP[i].name === `Ace of Hearts`) {
+      aceHInHandP = 1
+    }
+  }
   let newValue = []
   cardsPlayedP.forEach((value) => {
     newValue.push(value.value)
-    for (let i = 0; i < newValue.length; i++) {
-      if (newValue[i] === 11) {
-        aceInHandP = +1
-      }
-    }
+
     return newValue
   })
 
@@ -318,20 +338,28 @@ compareChoiceP = () => {
     return x + y
   }, 0)
 
-  if (aceInHandP > 0) {
+  if (aceCInHandP === 1) {
     if (finalSumP > 21) {
       finalSumP = finalSumP - 10
-      if (finalSumP > 21) {
-        btnPlayer.disabled = true
-        btnDealer.disabled = true
-        loser.style.opacity = 1
-      } else if (finalSumP === 21) {
-        btnPlayer.disabled = true
-        btnDealer.disabled = true
-        playerB.style.opacity = 1
-      }
     }
-  } else if (finalSumP > 21) {
+  }
+  if (aceHInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+  if (aceDInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+  if (aceSInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+
+  if (finalSumP > 21) {
     btnPlayer.disabled = true
     btnDealer.disabled = true
     loser.style.opacity = 1
@@ -344,6 +372,21 @@ compareChoiceP = () => {
   return finalSumP
 }
 compareChoiceD = () => {
+  for (let i = 0; i < cardsPlayedD.length; i++) {
+    if (cardsPlayedD[i].name === `Ace of Clubs`) {
+      aceCInHandD = 1
+    }
+    if (cardsPlayedD[i].name === `Ace of Spades`) {
+      aceSInHandD = 1
+    }
+    if (cardsPlayedD[i].name === `Ace of Diamonds`) {
+      aceDInHandD = 1
+    }
+    if (cardsPlayedD[i].name === `Ace of Hearts`) {
+      aceHInHandD = 1
+    }
+  }
+
   let newValue = []
   cardsPlayedD.forEach((value) => {
     newValue.push(value.value)
@@ -357,12 +400,24 @@ compareChoiceD = () => {
   let finalSumD = newValue.reduce((x, y) => {
     return x + y
   }, 0)
-  if (aceInHandD > 0) {
-    if (finalSumD > 21) {
-      finalSumD = finalSumD - 10
-      if (finalSumD > 21) {
-        winner.style.opacity = 1
-      }
+  if (aceCInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+  if (aceHInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+  if (aceDInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
+    }
+  }
+  if (aceSInHandP === 1) {
+    if (finalSumP > 21) {
+      finalSumP = finalSumP - 10
     }
   }
   if (finalSumD > 21) {
