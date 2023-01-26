@@ -287,7 +287,6 @@ let aceDInHandD = 0
 let aceSInHandD = 0
 let aceHInHandD = 0
 
-let aceInHandD = 0
 //////////////////////////////////////////////////
 
 deck.sort((a, b) => 0.5 - Math.random())
@@ -310,7 +309,6 @@ btnDealer.addEventListener(`click`, () => {
   compareChoiceD()
   compareChoiceF()
 })
-
 compareChoiceP = () => {
   for (let i = 0; i < cardsPlayedP.length; i++) {
     if (cardsPlayedP[i].name === `Ace of Clubs`) {
@@ -329,7 +327,6 @@ compareChoiceP = () => {
   let newValue = []
   cardsPlayedP.forEach((value) => {
     newValue.push(value.value)
-
     return newValue
   })
 
@@ -367,7 +364,6 @@ compareChoiceP = () => {
     btnDealer.disabled = true
     playerB.style.opacity = 1
   }
-
   return finalSumP
 }
 compareChoiceD = () => {
@@ -385,15 +381,9 @@ compareChoiceD = () => {
       aceHInHandD = 1
     }
   }
-
   let newValue = []
   cardsPlayedD.forEach((value) => {
     newValue.push(value.value)
-    for (let i = 0; i < newValue.length; i++) {
-      if (newValue[i] === 11) {
-        aceInHandD = +1
-      }
-    }
     return newValue
   })
   let finalSumD = newValue.reduce((x, y) => {
