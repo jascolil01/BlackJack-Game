@@ -27,3 +27,5 @@ My approach to the game will be through event listeners for button clicks, Math.
 [Casino Rug Background](https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg)
 
 [Second Page Gif](https://media.tenor.com/Bnklcztbb9QAAAAC/spider-man-mr-stark.gif)
+
+[Poker Table Felt](https://media.istockphoto.com/id/1218354234/vector/poker-table-background-in-green-color.jpg?s=612x612&w=0&k=20&c=h5ub96YRuOOMbLeBMPgQ4tnvgg7HFrJDo96jXQBoVtQ=)
