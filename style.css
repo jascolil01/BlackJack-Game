@@ -1,5 +1,6 @@
 body{
   background-image: url("https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg") ;
+  font-family: 'Crimson Text', serif;
 }
 button{
   display: flex;
@@ -33,7 +34,7 @@ background-color: red;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 4rem;
-  background-color:  red;
+  background:  linear-gradient(320deg, red,rgb(128, 0, 128));
   color:rgb(218,165,32);
   border-radius: 20px;
   text-align: center;
