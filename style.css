@@ -1,40 +1,47 @@
-body{
+body {
   background-image: url("https://3.bp.blogspot.com/-ssoN1svjRQQ/UJQ-_pf3p2I/AAAAAAAADxA/b8o7N32w_7k/s1600/Seamless+hotel+casino+carpet+texture.jpg") ;
   font-family: 'Crimson Text', serif;
 }
-button{
+
+button {
   display: flex;
   flex-direction: row;
- justify-content: center;
-  color:green;
+  justify-content: center;
+  align-items: center;
+  color: green;
   font-size: 2rem;
   border-radius: 10px;
   border: none;
   transition: .4s;
 }
-button:hover{
+
+button:hover {
   background-color: blue;
   color: aqua;
   box-shadow: 0 4px 30px rgb(247, 247, 247);
-
 }
-a{text-decoration: none;}
-#navButton{
-  display:block;
+
+a {
+  text-decoration: none;
+}
+
+#navButton {
+  display: block;
   color: black;
   transition: .3s;
 }
-#navButton:hover{
-font-size: 4em;
-background-color: red;
 
+#navButton:hover {
+  font-size: 3rem;
+  background-color: red;
 }
-#winner,#loser,#dealerB,#playerB,#tie {
-  position:absolute;
+
+#winner, #loser, #dealerB, #playerB, #tie {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 4rem;
+  padding: 2rem;
   background:  linear-gradient(320deg, red,rgb(128, 0, 128));
   color:rgb(218,165,32);
   border-radius: 20px;
@@ -43,34 +50,40 @@ background-color: red;
   opacity: 0;
   transition: all 250ms ease;
 }
-#playerCards{
-  margin-top: 19em;
+
+#playerCards {
+  margin-top: 100%;
 }
-#dealerCards{
-  margin-bottom: 1em;
+
+#dealerCards {
+  margin-bottom: 25%;
 }
-#table{
+
+#table {
   position: relative;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   background-image: url("https://media.istockphoto.com/id/1218354234/vector/poker-table-background-in-green-color.jpg?s=612x612&w=0&k=20&c=h5ub96YRuOOMbLeBMPgQ4tnvgg7HFrJDo96jXQBoVtQ=");
-background-repeat: no-repeat;
-background-size: cover;
-  height: 500px;
-  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 90%;
   border-radius: 50%;
-  margin: 50px 20px 20px 460px;
+  margin: 50px auto;
   border: 1em solid black;
 }
-ul, h2{
+
+ul, h2 {
   color: rgb(218,165,32);
- background-color: green;
- width: 400px;
- border-radius: 5px;
+  background-color: green;
+  width: 90%;
+  border-radius: 5px;
 }
-h2{
+
+h2 {
   text-align: center;
-  width: 300px;
+  width: 80%;
+  font-size: 2rem;
 }
